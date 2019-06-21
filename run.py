@@ -1,19 +1,9 @@
-from flask import Flask
+import os
 
-
-def create_app(config_filename):
-    app = Flask(__name__)
-    app.config.from_object(config_filename)
-
-    from app import api_bp
-    app.register_blueprint(api_bp, url_prefix='/api')
-
-    from models import db
-    db.init_app(app)
-
-    return app
-
+from src.app import create_app
 
 if __name__ == '__main__':
-    app = create_app("config")
-    app.run(debug=True)
+    env_name = os.getenv('FLASK_ENV')
+    app = create_app(env_name)
+    app.app_context().push()
+    app.run()
