@@ -27,7 +27,7 @@ inflection==0.3.1
 itsdangerous==1.1.0
 Jinja2==2.10.1
 jsonschema==2.6.0
-Mako==1.0.12
+Mako==1.2.2
 MarkupSafe==1.1.1
 marshmallow==3.0.0rc7
 marshmallow-jsonschema==0.6.0
